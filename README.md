@@ -1,4 +1,4 @@
-# UAV_Perseverance from HLRobotics
+# UAV_Perseverance from TechMaverik
 A short ranged Unmanned Areal Vehicle (Range <=100m) for Educational Purposes.
 
 ## Developers Note
