@@ -28,7 +28,16 @@ The tutorial includes building a flight controller using node mcu (ESP8266) and 
 
 * <b> Roll </b> : The roll axis (or longitudinal axis) has its origin at the center of gravity and is directed forward, parallel to the fuselage reference line. Motion about this axis is called roll. An angular displacement about this axis is called bank. A positive rolling motion lifts the left wing and lowers the right wing. 
 
-## Circuit Diagram
-<img src="Design_Archives\Circuit_Diagram.jpg" alt="Cannot Display">
+## Flight Controller Circuit Diagram
+<img src="Design_Archives\Perceverance_Circuit_Diagram.png" alt="Cannot Display" width=50% height=50%>
+
+## Flight Controller Hardware Implementation
+<img src="Design_Archives\Project_Perseverance_Flight_Controller.jpg" width =50% height=50% alt="Cannot Display">
+
+## Flight Controller Hardware Test
+<img src="Design_Archives\HardareBasicTest.png" width=50% alt="Cannot Display">
+
+
+
 
 <p align ="right">(to be contined ...... )</p>
