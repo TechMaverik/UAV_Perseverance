@@ -37,11 +37,13 @@ void setup() {
   pinMode(D6,OUTPUT);
   pinMode(D7,OUTPUT);
   pinMode(D8,OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 
   delay(1300);
-  Serial.begin(115200);
+  Serial.begin(9600);
+  Serial.println("[ PERSEVERANCE FLIGHT CONTROLLER ]");
   WiFi.mode(WIFI_STA);
-  WiFi.begin("WIFI_SOURCE_NAME", "PASSWORD");
+  WiFi.begin("GNXS-2.4G-A15067", "mrf37600");
   while (WiFi.status() != WL_CONNECTED){
     GPOS = (1 << 14);
     GPOS = (1 << 12);
@@ -53,6 +55,11 @@ void setup() {
     GPOC = (1 << 13);
     GPOC = (1 << 15);   
     delayMicroseconds(1000);
+    Serial.println("Connecting .....");
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(250);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(250);
     yield(); 
 }
 Serial.println(WiFi.localIP()); 
@@ -104,6 +111,7 @@ Time = micros();
 }
 
 void loop(){ 
+  digitalWrite(LED_BUILTIN, HIGH);
   GPOS = (1 << 14);
   GPOS = (1 << 12);
   GPOS = (1 << 13);
@@ -268,11 +276,11 @@ void loop(){
   twoX_ki = (float)int(packet[3])/(float)1000; 
   twoX_kd = (float)(int(packet[4])*100 + int(packet[5]))/(float)100;
   }
-  Serial.print(input_ROLL);Serial.print(" ");
-  Serial.print(input_THROTTLE);Serial.print(" ");
-  Serial.print(twoX_kp);Serial.print(" ");
-  Serial.print(twoX_ki,3);Serial.print(" ");
-  Serial.print(twoX_kd);Serial.println();
+//   Serial.print(input_ROLL);Serial.print(" ");
+//   Serial.print(input_THROTTLE);Serial.print(" ");
+//   Serial.print(twoX_kp);Serial.print(" ");
+//   Serial.print(twoX_ki,3);Serial.print(" ");
+//   Serial.print(twoX_kd);Serial.println();
   }
   }
   else if(recvState){
@@ -282,9 +290,9 @@ void loop(){
   }
   recvState = !recvState;
   //-----------------------------------------------------------------------//
-  Serial.print(angle_roll_output);Serial.print("  ");
-  Serial.print(angle_pitch_output);Serial.print(" | ");
-  Serial.print(roll_desired_angle);Serial.print("  ");
-  Serial.print(pitch_desired_angle);
-  Serial.println();
+//   Serial.print(angle_roll_output);Serial.print("  ");
+//   Serial.print(angle_pitch_output);Serial.print(" | ");
+//   Serial.print(roll_desired_angle);Serial.print("  ");
+//   Serial.print(pitch_desired_angle);
+//   Serial.println(); 
 } 
